@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #faf8f5; /* Crisp porcelain white with a whisper of warmth */
+  --surface-color: #ffffff;
+  --text-main: #1f1d1c;
+  --text-muted: #78716c;
+  --border-color: rgba(31, 29, 28, 0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Atmospheric blush & apricot ambient glow */
+body::before {
+  content: '';
+  position: fixed;
+  top: -120px;
+  right: -80px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(
+    circle,
+    rgba(244, 114, 182, 0.08) 0%,
+    rgba(251, 146, 60, 0.05) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -160px;
+  left: -120px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.05) 0%,
+    rgba(168, 85, 247, 0.03) 55%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
