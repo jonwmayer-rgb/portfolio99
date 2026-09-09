@@ -165,13 +165,13 @@ export default function CaseStudiesPage() {
           </nav>
         </header>
 
-        {/* HEADER SECTION */}
-        <section className="pt-8 pb-6">
+ {/* HEADER SECTION */}
+ <section className="pt-8 pb-6">
           <h1 className="text-2xl font-medium tracking-tight text-stone-900 md:text-3xl">
-            Selected Case Studies
+            Case Studies
           </h1>
-          <p className="mt-2 text-sm text-stone-500">
-            Fun creative challenges and how I responded
+          <p className="mt-2 text-sm italic text-stone-500">
+            Selected creative challenges and how I approached them
           </p>
         </section>
 
