@@ -69,15 +69,15 @@ const VERTICAL_VIDEOS: VerticalVideoItem[] = [
     id: 'ig-4k',
     platform: 'Instagram Reel',
     badge: '1.8M Views',
-    title: 'Viral Retention & Audience Growth',
+    title: 'Creative use of primary language for SEO',
     formatName: '+4,000 New Followers',
     posterImage: '/reel-4k.png',
     embedSrc: 'https://www.instagram.com/reel/DYzaYRHx55Q/embed/',
     nativeUrl: 'https://www.instagram.com/reels/DYzaYRHx55Q/',
     description: (
       <>
-        High-hook retention pacing that drove{' '}
-        <strong className="font-semibold text-stone-800">1.8M views</strong> and converted{' '}
+        SEO play for Arabic-speaking viewers driving {' '}
+        <strong className="font-semibold text-stone-800">1.8M views</strong>, converted{' '}
         <strong className="font-semibold text-stone-800">+4K net-new followers</strong> from a single organic asset.
       </>
     ),
@@ -219,7 +219,6 @@ export default function SelectedWorkPage() {
               </p>
             </div>
             <span className="text-xs font-mono text-stone-400">
-              Interactive In-Site Embeds
             </span>
           </div>
 
