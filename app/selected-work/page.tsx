@@ -136,6 +136,163 @@ export default function SelectedWorkPage() {
           </p>
         </section>
 
+        {/* SHORT-FORM & VERTICAL VIDEO SECTION */}
+        <section className="border-t border-stone-200/80 pt-10 pb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-2 pb-6">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-rose-600 animate-pulse" />
+                <h2 className="text-xs uppercase tracking-widest text-stone-500 font-mono font-medium">
+                  High-Impact Short-Form &amp; Reels
+                </h2>
+              </div>
+              <p className="mt-1 font-serif text-2xl font-normal text-stone-900">
+                Format innovation, viral reach &amp; audience acquisition
+              </p>
+            </div>
+            <span className="text-xs font-mono text-stone-400">
+              TikTok, Instagram Reels, YouTube Shorts
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {/* ITEM 1: TikTok - 12.5M Views */}
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-stone-200/90 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-300 hover:shadow-md">
+              <div>
+                <div className="flex items-center justify-between gap-2 pb-4">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-stone-900 px-2.5 py-0.5 text-[11px] font-mono text-white">
+                    TikTok · Babbel
+                  </span>
+                  <span className="rounded-full border border-rose-200 bg-rose-50 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-rose-800">
+                    12.5M Views
+                  </span>
+                </div>
+
+                {/* Aspect 9:14 Frame */}
+                <a
+                  href="https://www.tiktok.com/@babbel/video/7491313947853802794?utm_campaign=tt4d_open_api&utm_source=6997707748318117889"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block aspect-[9/14] w-full overflow-hidden rounded-xl bg-stone-900 shadow-inner group-hover:ring-2 group-hover:ring-rose-400/50 transition-all"
+                >
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white bg-gradient-to-t from-black/80 via-stone-900/60 to-black/30">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                      <svg className="h-5 w-5 fill-white ml-0.5" viewBox="0 0 24 24">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                    </div>
+                    <p className="mt-4 font-serif text-lg text-stone-100 italic">
+                      “Step One Way” Format
+                    </p>
+                    <p className="mt-1 text-[11px] font-mono text-stone-300 uppercase tracking-wider">
+                      Watch on TikTok ↗
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <div className="pt-4">
+                <h3 className="text-sm font-semibold text-stone-900">
+                  Original Format Architecture
+                </h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-stone-500">
+                  Ideated and directed the breakout “Step One Way” language comparison format, which scaled across organic channels to generate over <strong className="font-semibold text-stone-800">150M+ franchise views</strong>.
+                </p>
+              </div>
+            </div>
+
+            {/* ITEM 2: Instagram Reel - 930K Views */}
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-stone-200/90 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-300 hover:shadow-md">
+              <div>
+                <div className="flex items-center justify-between gap-2 pb-4">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-stone-100 px-2.5 py-0.5 text-[11px] font-mono text-stone-700">
+                    Instagram Reel
+                  </span>
+                  <span className="rounded-full border border-rose-200 bg-rose-50 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-rose-800">
+                    930K+ Views
+                  </span>
+                </div>
+
+                {/* Aspect 9:14 Frame */}
+                <a
+                  href="https://www.instagram.com/reels/DDuiew-x6Vd/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block aspect-[9/14] w-full overflow-hidden rounded-xl bg-stone-900 shadow-inner group-hover:ring-2 group-hover:ring-rose-400/50 transition-all"
+                >
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white bg-gradient-to-t from-black/80 via-stone-900/60 to-black/30">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                      <svg className="h-5 w-5 fill-white ml-0.5" viewBox="0 0 24 24">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                    </div>
+                    <p className="mt-4 font-mono text-xs text-rose-300 font-medium">
+                      +18,000 New Followers
+                    </p>
+                    <p className="mt-1 text-[11px] font-mono text-stone-300 uppercase tracking-wider">
+                      Watch on Instagram ↗
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <div className="pt-4">
+                <h3 className="text-sm font-semibold text-stone-900">
+                  Direct Acquisition Conversion
+                </h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-stone-500">
+                  Engineered for maximum profile visit conversion, yielding an outsized <strong className="font-semibold text-stone-800">+18,000 follower surge</strong> on a sub-1M view threshold.
+                </p>
+              </div>
+            </div>
+
+            {/* ITEM 3: Instagram Reel - 1.8M Views */}
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-stone-200/90 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-300 hover:shadow-md">
+              <div>
+                <div className="flex items-center justify-between gap-2 pb-4">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-stone-100 px-2.5 py-0.5 text-[11px] font-mono text-stone-700">
+                    Instagram Reel
+                  </span>
+                  <span className="rounded-full border border-rose-200 bg-rose-50 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-rose-800">
+                    1.8M Views
+                  </span>
+                </div>
+
+                {/* Aspect 9:14 Frame */}
+                <a
+                  href="https://www.instagram.com/reels/DYzaYRHx55Q/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block aspect-[9/14] w-full overflow-hidden rounded-xl bg-stone-900 shadow-inner group-hover:ring-2 group-hover:ring-rose-400/50 transition-all"
+                >
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white bg-gradient-to-t from-black/80 via-stone-900/60 to-black/30">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                      <svg className="h-5 w-5 fill-white ml-0.5" viewBox="0 0 24 24">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                    </div>
+                    <p className="mt-4 font-mono text-xs text-rose-300 font-medium">
+                      +4,000 New Followers
+                    </p>
+                    <p className="mt-1 text-[11px] font-mono text-stone-300 uppercase tracking-wider">
+                      Watch on Instagram ↗
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <div className="pt-4">
+                <h3 className="text-sm font-semibold text-stone-900">
+                  Viral Retention &amp; Audience Growth
+                </h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-stone-500">
+                  High-hook retention pacing that drove <strong className="font-semibold text-stone-800">1.8M views</strong> and converted <strong className="font-semibold text-stone-800">+4K net-new followers</strong> from a single organic asset.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* PROJECTS LIST */}
         <div className="space-y-24 pt-4 border-t border-stone-200/80">
           {SELECTED_PROJECTS.map((project) => (
