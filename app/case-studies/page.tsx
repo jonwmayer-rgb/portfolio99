@@ -125,7 +125,7 @@ export default function CaseStudiesPage() {
             >
               Jonathan Mayer
             </Link>
-            <p className="text-xs uppercase tracking-widest text-stone-500 mt-1 font-mono">
+            <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">
               Video Producer/Strategist &middot; New York City
             </p>
           </div>
@@ -165,8 +165,8 @@ export default function CaseStudiesPage() {
           </nav>
         </header>
 
- {/* HEADER SECTION */}
- <section className="pt-8 pb-6">
+        {/* HEADER SECTION */}
+        <section className="pt-8 pb-6">
           <h1 className="text-2xl font-medium tracking-tight text-stone-900 md:text-3xl">
             Case Studies
           </h1>
@@ -207,7 +207,7 @@ export default function CaseStudiesPage() {
                 </div>
                 <div>
                   <h3 className="text-xs uppercase tracking-wider text-stone-500 mb-1.5 font-mono">
-                    Execution & Scope
+                    Execution &amp; Scope
                   </h3>
                   <p className="text-stone-700 leading-relaxed">
                     {project.strategy}
@@ -328,7 +328,7 @@ export default function CaseStudiesPage() {
           <div>
             <p className="text-stone-900 font-medium">Jonathan Mayer</p>
             <p className="text-xs text-stone-500 mt-0.5">
-              Available for Senior Producer, Head of Video & Agency roles.
+              Available for Senior Producer, Head of Video &amp; Agency roles.
             </p>
           </div>
           <div className="flex items-center gap-6">

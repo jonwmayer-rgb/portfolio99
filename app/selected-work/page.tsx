@@ -154,7 +154,7 @@ export default function SelectedWorkPage() {
             >
               Jonathan Mayer
             </Link>
-            <p className="text-xs uppercase tracking-widest text-stone-500 mt-1 font-mono">
+            <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">
               Video Producer/Strategist &middot; New York City
             </p>
           </div>
