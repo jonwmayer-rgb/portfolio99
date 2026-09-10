@@ -34,9 +34,9 @@ interface VerticalVideoItem {
 const VERTICAL_VIDEOS: VerticalVideoItem[] = [
   {
     id: 'tiktok-step-one',
-    platform: 'TikTok · Babbel',
+    platform: 'TikTok',
     badge: '12.5M Views',
-    title: 'Original Format Architecture',
+    title: 'Step One Way',
     formatName: '“Step One Way” Format',
     posterImage: '/reel-step-one.png',
     embedSrc: 'https://www.tiktok.com/player/v1/7491313947853802794?autoplay=1',
@@ -44,8 +44,8 @@ const VERTICAL_VIDEOS: VerticalVideoItem[] = [
       'https://www.tiktok.com/@babbel/video/7491313947853802794?utm_campaign=tt4d_open_api&utm_source=6997707748318117889',
     description: (
       <>
-        Ideated and directed the breakout “Step One Way” framework, which scaled across organic channels to generate over{' '}
-        <strong className="font-semibold text-stone-800">150M+ franchise views</strong>.
+        Ideated  &amp; directed breakout language comparison format, which scaled across channels to generate {' '}
+        <strong className="font-semibold text-stone-800">150M+ organic franchise views</strong>.
       </>
     ),
   },
@@ -53,7 +53,7 @@ const VERTICAL_VIDEOS: VerticalVideoItem[] = [
     id: 'ig-18k',
     platform: 'Instagram Reel',
     badge: '930K+ Views',
-    title: 'Direct Acquisition Conversion',
+    title: 'Follower Acquisition Engine',
     formatName: '+18,000 New Followers',
     posterImage: '/reel-18k.png',
     embedSrc: 'https://www.instagram.com/reel/DDuiew-x6Vd/embed/',
