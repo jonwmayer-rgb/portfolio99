@@ -36,7 +36,7 @@ const VERTICAL_VIDEOS: VerticalVideoItem[] = [
     id: 'tiktok-step-one',
     platform: 'TikTok',
     badge: '12.5M Views',
-    title: 'Step One Way',
+    title: '"Step One Way" Format',
     formatName: '“150M+ Total Franchise Views',
     posterImage: '/reel-step-one.png',
     embedSrc: 'https://www.tiktok.com/player/v1/7491313947853802794?autoplay=1',
