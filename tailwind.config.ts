@@ -8,12 +8,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: 'var(--bg-color)',
-        surface: 'var(--surface-color)',
-        foreground: 'var(--text-main)',
-        muted: 'var(--text-muted)',
-        border: 'var(--border-color)',
+      fontFamily: {
+        serif: ['var(--font-serif)', 'serif'],
       },
     },
   },
