@@ -85,7 +85,7 @@ export default function HomePage() {
             <div className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-rose-600" />
               <h2 className="text-xs uppercase tracking-widest text-stone-500 font-mono font-medium">
-                Producer Reel, 2023
+                Producer Reel
               </h2>
             </div>
             <span className="text-xs font-mono text-rose-800 bg-rose-50 px-2 py-0.5 rounded border border-rose-200/80" />
