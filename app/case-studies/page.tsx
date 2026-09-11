@@ -190,7 +190,7 @@ export default function CaseStudiesPage() {
               Selected Work
             </Link>
             <a
-              href="/resume.pdf?v=2"
+              href="/resume.pdf?v=3"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-stone-600 hover:text-rose-700 transition-colors font-mono text-xs"
