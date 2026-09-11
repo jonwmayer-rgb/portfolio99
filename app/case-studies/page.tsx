@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 interface ProgramCallout {
@@ -23,8 +25,26 @@ interface CaseStudy {
   videoEmbedUrl?: string;
   programFeature?: ProgramCallout;
   mediaGroup?: {
-    horizontalUrl: string;
-    verticalUrls: [string, string];
+    horizontal: {
+      url: string;
+      poster: string;
+      badge: string;
+      label: string;
+    };
+    verticals: [
+      {
+        url: string;
+        poster: string;
+        badge: string;
+        label: string;
+      },
+      {
+        url: string;
+        poster: string;
+        badge: string;
+        label: string;
+      }
+    ];
   };
 }
 
@@ -56,10 +76,25 @@ const FEATURED_PROJECTS: CaseStudy[] = [
       </>
     ),
     mediaGroup: {
-      horizontalUrl: 'https://www.youtube.com/embed/ymx6qVE1Fm0',
-      verticalUrls: [
-        'https://www.instagram.com/reel/DVjFhcgjrWh/embed',
-        'https://www.tiktok.com/player/v1/7525823985397927223',
+      horizontal: {
+        url: 'https://www.youtube.com/embed/ymx6qVE1Fm0?autoplay=1',
+        poster: '/case-babbel-yt.jpg',
+        badge: '3M+ AIO Impressions',
+        label: 'How to Learn Spanish',
+      },
+      verticals: [
+        {
+          url: 'https://www.instagram.com/reel/DVjFhcgjrWh/embed',
+          poster: '/case-babbel-ig.jpg',
+          badge: '36 Opt-ins',
+          label: 'Direct-Response Reel',
+        },
+        {
+          url: 'https://www.tiktok.com/player/v1/7525823985397927223?autoplay=1',
+          poster: '/case-babbel-tt.jpg',
+          badge: '150K Views',
+          label: 'Organic TikTok Lead-Gen',
+        },
       ],
     },
   },
@@ -113,6 +148,8 @@ const FEATURED_PROJECTS: CaseStudy[] = [
 ];
 
 export default function CaseStudiesPage() {
+  const [activeMediaId, setActiveMediaId] = useState<string | null>(null);
+
   return (
     <main className="relative z-10 min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background">
       <div className="mx-auto max-w-5xl px-6 py-8 md:px-12 md:py-10">
@@ -276,34 +313,115 @@ export default function CaseStudiesPage() {
                 </div>
               ) : project.mediaGroup ? (
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-3 pt-1">
-                  <div className="md:col-span-7 aspect-video w-full overflow-hidden rounded-md bg-stone-900 border border-stone-200/90 shadow-[0_12px_36px_-12px_rgba(244,114,182,0.18)]">
-                    <iframe
-                      src={project.mediaGroup.horizontalUrl}
-                      title={`${project.title} - Main Feature`}
-                      className="h-full w-full border-0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="md:col-span-5 grid grid-cols-2 gap-3">
-                    {project.mediaGroup.verticalUrls.map((url, i) => (
+                  {/* Horizontal Feature */}
+                  <div className="md:col-span-7 aspect-video w-full overflow-hidden rounded-md bg-stone-950 border border-stone-200/90 shadow-[0_12px_36px_-12px_rgba(244,114,182,0.18)] relative">
+                    {activeMediaId === `${project.id}-horizontal` ? (
+                      <iframe
+                        src={project.mediaGroup.horizontal.url}
+                        title={`${project.title} - Main Feature`}
+                        className="h-full w-full border-0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    ) : (
                       <div
-                        key={i}
-                        className="aspect-[9/16] w-full overflow-hidden rounded-md bg-stone-900 border border-stone-200/90 shadow-[0_12px_36px_-12px_rgba(244,114,182,0.18)]"
+                        onClick={() => setActiveMediaId(`${project.id}-horizontal`)}
+                        className="group/poster relative h-full w-full cursor-pointer overflow-hidden"
                       >
-                        <iframe
-                          src={url}
-                          title={`${project.title} - Social Cut ${i + 1}`}
-                          className="h-full w-full border-0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerPolicy="strict-origin-when-cross-origin"
-                          allowFullScreen
-                          loading="lazy"
+                        <div
+                          className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover/poster:scale-105"
+                          style={{
+                            backgroundImage: `url(${project.mediaGroup.horizontal.poster})`,
+                            backgroundColor: '#1c1917',
+                          }}
                         />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-stone-950/60 to-black/40 backdrop-blur-[1.5px] transition-all duration-300 group-hover/poster:backdrop-blur-none" />
+
+                        {/* Top Badge */}
+                        <div className="absolute top-3 right-3">
+                          <span className="rounded-full border border-rose-300/40 bg-rose-950/80 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-rose-200 backdrop-blur-sm">
+                            {project.mediaGroup.horizontal.badge}
+                          </span>
+                        </div>
+
+                        {/* Center Controls */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white">
+                          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/25 backdrop-blur-md shadow-lg transition-all duration-300 group-hover/poster:scale-110 group-hover/poster:bg-rose-600">
+                            <svg className="h-6 w-6 fill-white ml-0.5" viewBox="0 0 24 24">
+                              <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                          </div>
+                          <p className="mt-3 font-serif text-lg font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                            {project.mediaGroup.horizontal.label}
+                          </p>
+                          <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-stone-200 backdrop-blur-sm ring-1 ring-white/10">
+                            Click to Play
+                          </span>
+                        </div>
                       </div>
-                    ))}
+                    )}
+                  </div>
+
+                  {/* 2 Vertical Companions */}
+                  <div className="md:col-span-5 grid grid-cols-2 gap-3">
+                    {project.mediaGroup.verticals.map((vert, i) => {
+                      const isVertPlaying = activeMediaId === `${project.id}-vert-${i}`;
+                      return (
+                        <div
+                          key={i}
+                          className="aspect-[9/16] w-full overflow-hidden rounded-md bg-stone-950 border border-stone-200/90 shadow-[0_12px_36px_-12px_rgba(244,114,182,0.18)] relative"
+                        >
+                          {isVertPlaying ? (
+                            <iframe
+                              src={vert.url}
+                              title={`${project.title} - Social Cut ${i + 1}`}
+                              className="h-full w-full border-0 bg-stone-950"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              referrerPolicy="strict-origin-when-cross-origin"
+                              allowFullScreen
+                              scrolling="no"
+                            />
+                          ) : (
+                            <div
+                              onClick={() => setActiveMediaId(`${project.id}-vert-${i}`)}
+                              className="group/vert relative h-full w-full cursor-pointer overflow-hidden"
+                            >
+                              <div
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover/vert:scale-105"
+                                style={{
+                                  backgroundImage: `url(${vert.poster})`,
+                                  backgroundColor: '#1c1917',
+                                }}
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-stone-950/60 to-black/40 backdrop-blur-[1.5px] transition-all duration-300 group-hover/vert:backdrop-blur-none" />
+
+                              {/* Metric Badge */}
+                              <div className="absolute top-2.5 left-2.5 right-2.5 flex justify-center">
+                                <span className="rounded-full border border-rose-300/40 bg-rose-950/85 px-2 py-0.5 text-[10px] font-mono font-semibold text-rose-200 backdrop-blur-sm text-center">
+                                  {vert.badge}
+                                </span>
+                              </div>
+
+                              {/* Center Play Button */}
+                              <div className="absolute inset-0 flex flex-col items-center justify-center p-3 text-center text-white">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/25 backdrop-blur-md shadow-md transition-all duration-300 group-hover/vert:scale-110 group-hover/vert:bg-rose-600">
+                                  <svg className="h-5 w-5 fill-white ml-0.5" viewBox="0 0 24 24">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                  </svg>
+                                </div>
+                                <p className="mt-3 font-serif text-sm font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                                  {vert.label}
+                                </p>
+                                <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider text-stone-200 backdrop-blur-sm">
+                                  Play
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               ) : (
