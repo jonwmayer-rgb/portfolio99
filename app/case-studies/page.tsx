@@ -23,6 +23,9 @@ interface CaseStudy {
   strategy: string;
   deliverables: React.ReactNode;
   videoEmbedUrl?: string;
+  videoBadge?: string;
+  videoLabel?: string;
+  videoPoster?: string;
   programFeature?: ProgramCallout;
   mediaGroup?: {
     horizontal: {
@@ -80,7 +83,7 @@ const FEATURED_PROJECTS: CaseStudy[] = [
         url: 'https://www.youtube.com/embed/ymx6qVE1Fm0?autoplay=1',
         poster: 'https://img.youtube.com/vi/ymx6qVE1Fm0/maxresdefault.jpg',
         badge: '3M+ AIO Impressions',
-        label: '"How to Learn Spanish Fast" SEO Play',
+        label: 'How to Learn Spanish',
       },
       verticals: [
         {
@@ -92,8 +95,8 @@ const FEATURED_PROJECTS: CaseStudy[] = [
         {
           url: 'https://www.tiktok.com/player/v1/7525823985397927223?autoplay=1',
           poster: '/case-babbel-tt.jpg',
-          badge: 'UGC',
-          label: 'Learner Journey',
+          badge: '150K Views',
+          label: 'Organic TikTok Lead-Gen',
         },
       ],
     },
@@ -112,7 +115,10 @@ const FEATURED_PROJECTS: CaseStudy[] = [
     deliverables:
       'Increased output 150% with smaller team, more than 3xed YouTube Revenue, hundreds of millions of annual views across platforms. Conceived & produced new winning series/formats like "Food History."',
     videoEmbedUrl:
-      'https://www.youtube.com/embed/KdtpBKKIvrk?list=PLYT7t0pcxEINn7R0XjGy3aj4cuLj8bn9U',
+      'https://www.youtube.com/embed/KdtpBKKIvrk?list=PLYT7t0pcxEINn7R0XjGy3aj4cuLj8bn9U&autoplay=1',
+    videoBadge: '200K+ Watch Hours',
+    videoLabel: 'Food History Series',
+    videoPoster: 'https://img.youtube.com/vi/KdtpBKKIvrk/maxresdefault.jpg',
   },
   {
     id: 'growth-language-media',
@@ -338,7 +344,7 @@ export default function CaseStudiesPage() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-stone-950/60 to-black/40 backdrop-blur-[1.5px] transition-all duration-300 group-hover/poster:backdrop-blur-none" />
 
-                        {/* Top Badge */}
+                        {/* Top Bug */}
                         <div className="absolute top-3 right-3">
                           <span className="rounded-full border border-rose-300/40 bg-rose-950/80 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-rose-200 backdrop-blur-sm">
                             {project.mediaGroup.horizontal.badge}
@@ -425,16 +431,54 @@ export default function CaseStudiesPage() {
                   </div>
                 </div>
               ) : (
-                <div className="relative aspect-video w-full overflow-hidden rounded-md bg-stone-900 border border-stone-200/90 shadow-[0_12px_36px_-12px_rgba(244,114,182,0.18)]">
-                  <iframe
-                    src={project.videoEmbedUrl}
-                    title={project.title}
-                    className="h-full w-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+                <div className="relative aspect-video w-full overflow-hidden rounded-md bg-stone-950 border border-stone-200/90 shadow-[0_12px_36px_-12px_rgba(244,114,182,0.18)]">
+                  {/* Broadcast Bug */}
+                  {project.videoBadge && (
+                    <div className="absolute top-3 right-3 z-10 pointer-events-none">
+                      <span className="rounded-full border border-rose-300/40 bg-rose-950/85 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-rose-200 backdrop-blur-sm shadow-md">
+                        {project.videoBadge}
+                      </span>
+                    </div>
+                  )}
+
+                  {activeMediaId === project.id ? (
+                    <iframe
+                      src={project.videoEmbedUrl}
+                      title={project.title}
+                      className="h-full w-full border-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <div
+                      onClick={() => setActiveMediaId(project.id)}
+                      className="group/poster relative h-full w-full cursor-pointer overflow-hidden"
+                    >
+                      <div
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover/poster:scale-105"
+                        style={{
+                          backgroundImage: `url(${project.videoPoster || 'https://img.youtube.com/vi/KdtpBKKIvrk/maxresdefault.jpg'})`,
+                          backgroundColor: '#1c1917',
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-stone-950/60 to-black/40 backdrop-blur-[1.5px] transition-all duration-300 group-hover/poster:backdrop-blur-none" />
+
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/25 backdrop-blur-md shadow-lg transition-all duration-300 group-hover/poster:scale-110 group-hover/poster:bg-rose-600">
+                          <svg className="h-6 w-6 fill-white ml-0.5" viewBox="0 0 24 24">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                          </svg>
+                        </div>
+                        <p className="mt-3 font-serif text-lg font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                          {project.videoLabel || project.title}
+                        </p>
+                        <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-stone-200 backdrop-blur-sm ring-1 ring-white/10">
+                          Click to Play Series
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </article>
