@@ -234,8 +234,8 @@ export default function CaseStudiesPage() {
                 <h2 className="mt-1.5 text-2xl font-medium tracking-tight text-stone-900">
                   {project.title}
                 </h2>
-                <p className="text-sm text-stone-500 mt-0.5 font-mono">
-                  Role: {project.role}
+                <p className="text-sm text-stone-600 mt-1 font-normal tracking-normal">
+                  <span className="text-stone-400 font-medium">Role:</span> {project.role}
                 </p>
               </div>
 
@@ -419,7 +419,7 @@ export default function CaseStudiesPage() {
                                 <p className="mt-3 font-serif text-sm font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                                   {vert.label}
                                 </p>
-                                <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider text-stone-200 backdrop-blur-sm">
+                                <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-0.5 text-[9px] font-mono uppercase tracking-wider text-stone-200 backdrop-blur-sm">
                                   Play
                                 </span>
                               </div>

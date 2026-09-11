@@ -110,7 +110,9 @@ export default function HomePage() {
         <section className="pt-8 pb-7 max-w-3xl">
           <p className="font-serif text-2xl font-normal leading-snug text-stone-900 md:text-3xl md:leading-snug">
             I lead teams that deliver{' '}
-            <span className="italic text-rose-900 font-normal">massive visibility</span>{' '}
+            <span className="whitespace-nowrap italic text-rose-900 font-normal">
+              massive visibility
+            </span>{' '}
             and lasting{' '}
             <span className="whitespace-nowrap italic text-rose-900 font-normal">
               business impact

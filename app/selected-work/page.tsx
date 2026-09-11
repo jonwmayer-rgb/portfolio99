@@ -210,7 +210,7 @@ export default function SelectedWorkPage() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-rose-600 animate-pulse" />
-                <h2 className="text-xs uppercase tracking-widest text-stone-500 font-mono font-medium">
+                <h2 className="text-xs uppercase tracking-wider text-stone-500 font-medium">
                   High-Impact Short-Form &amp; Reels
                 </h2>
               </div>
@@ -333,7 +333,7 @@ export default function SelectedWorkPage() {
                 <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-stone-900">
                   {project.title}
                 </h2>
-                <p className="text-sm text-stone-500 font-mono">
+                <p className="text-sm text-stone-600 mt-0.5 font-normal tracking-normal">
                   {project.roleDescription}
                 </p>
               </div>

@@ -1225,6 +1225,9 @@ video {
 .tracking-widest {
   letter-spacing: 0.1em;
 }
+.tracking-normal {
+  letter-spacing: 0em;
+}
 .text-rose-200 {
   --tw-text-opacity: 1;
   color: rgb(254 205 211 / var(--tw-text-opacity));
