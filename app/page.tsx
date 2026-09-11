@@ -85,7 +85,7 @@ export default function HomePage() {
               Selected Work
             </Link>
             <a
-              href="/resume.pdf"
+              href="/resume.pdf?v=2"
               target="_blank"
               className="group flex items-center gap-1.5 text-stone-600 hover:text-rose-700 transition-colors font-mono text-xs"
             >
