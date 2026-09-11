@@ -16,6 +16,7 @@ interface CaseStudy {
   id: string;
   title: string;
   client: string;
+  clientLogo?: string;
   role: string;
   year: string;
   metrics: string;
@@ -56,6 +57,7 @@ const FEATURED_PROJECTS: CaseStudy[] = [
     id: 'global-brand-doc',
     title: 'Modernizing a Legacy Brand',
     client: 'Babbel',
+    clientLogo: '/babbel-logo.png',
     role: 'Global Lead, Organic Social',
     year: '2022-2026',
     metrics: '1B+ Organic Views',
@@ -105,6 +107,7 @@ const FEATURED_PROJECTS: CaseStudy[] = [
     id: 'keyman',
     title: 'Overcoming Key Man Risk',
     client: 'Mental Floss',
+    clientLogo: '/mentalfloss-logo.png',
     role: 'Head of Video',
     year: '2019-2022',
     metrics: '+220% YouTube Revenue YoY',
@@ -124,6 +127,7 @@ const FEATURED_PROJECTS: CaseStudy[] = [
     id: 'growth-language-media',
     title: 'Turning a founder-led non-profit into a lasting changemaker',
     client: 'Hook Arts Media (formerly Dance Theatre Etcetera)',
+    clientLogo: '/hookarts-logo.png',
     role: 'Media/Marketing Manager, later Associate Director',
     year: '2010-2015',
     metrics: 'Annual org. budget and cash reserves each grew 200%+',
@@ -157,7 +161,7 @@ export default function CaseStudiesPage() {
   const [activeMediaId, setActiveMediaId] = useState<string | null>(null);
 
   return (
-    <main className="relative z-10 min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background">
+    <main className="relative z-10 min-h-screen bg-stone-50 text-stone-900 selection:bg-stone-900 selection:text-white">
       <div className="mx-auto max-w-5xl px-6 py-8 md:px-12 md:py-10">
         {/* NAVIGATION */}
         <header className="flex flex-col justify-between gap-4 border-b border-stone-200/80 pb-6 sm:flex-row sm:items-center">
@@ -186,13 +190,16 @@ export default function CaseStudiesPage() {
               Selected Work
             </Link>
             <a
-              href="/resume.pdf"
+              href="/resume.pdf?v=2"
               target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-stone-600 hover:text-rose-700 transition-colors font-mono text-xs"
             >
               <span>Resume</span>
               <svg
-                className="h-3 w-3"
+                width="12"
+                height="12"
+                className="h-3 w-3 shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="2.2"
@@ -221,17 +228,34 @@ export default function CaseStudiesPage() {
         {/* CASE STUDIES STACK */}
         <div className="space-y-20 pt-4 border-t border-stone-200/80">
           {FEATURED_PROJECTS.map((project) => (
-            <article key={project.id} className="space-y-4 pt-4">
+            <article key={project.id} className="group/article space-y-4 pt-4">
               <div>
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-xs font-mono text-stone-500 uppercase tracking-wider">
-                    {project.client} &middot; {project.year}
-                  </span>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  {/* CLIENT LOGO / TEXT LOCKUP */}
+                  <div className="flex items-center gap-2.5">
+                    {project.clientLogo ? (
+                      <>
+                        <img
+                          src={project.clientLogo}
+                          alt={project.client}
+                          className="h-5 max-w-[120px] object-contain grayscale contrast-125 opacity-75 transition-all duration-300 group-hover/article:grayscale-0 group-hover/article:opacity-100"
+                        />
+                        <span className="text-xs font-mono text-stone-400">
+                          &middot; {project.year}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-xs font-mono text-stone-500 uppercase tracking-wider">
+                        {project.client} &middot; {project.year}
+                      </span>
+                    )}
+                  </div>
+
                   <span className="inline-block rounded-full border border-rose-200 bg-rose-50 px-2.5 py-0.5 text-xs text-rose-800 font-mono">
                     {project.metrics}
                   </span>
                 </div>
-                <h2 className="mt-1.5 text-2xl font-medium tracking-tight text-stone-900">
+                <h2 className="mt-2 text-2xl font-medium tracking-tight text-stone-900">
                   {project.title}
                 </h2>
                 <p className="text-sm text-stone-600 mt-1 font-normal tracking-normal">
@@ -289,7 +313,9 @@ export default function CaseStudiesPage() {
                     >
                       <span>{project.programFeature.linkText}</span>
                       <svg
-                        className="h-3 w-3"
+                        width="12"
+                        height="12"
+                        className="h-3 w-3 shrink-0"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth="2.2"
@@ -419,7 +445,7 @@ export default function CaseStudiesPage() {
                                 <p className="mt-3 font-serif text-sm font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                                   {vert.label}
                                 </p>
-                                <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-0.5 text-[9px] font-mono uppercase tracking-wider text-stone-200 backdrop-blur-sm">
+                                <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider text-stone-200 backdrop-blur-sm">
                                   Play
                                 </span>
                               </div>
