@@ -200,7 +200,7 @@ export default function SelectedWorkPage() {
             Selected Work &amp; Series
           </h1>
           <p className="mt-2 text-sm text-stone-500">
-            Original narrative comedy, high-cadence digital franchises, and civic documentaries.
+            Work I'm proud of 
           </p>
         </section>
 
