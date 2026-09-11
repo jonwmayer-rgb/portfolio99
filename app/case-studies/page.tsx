@@ -220,8 +220,8 @@ export default function CaseStudiesPage() {
           <h1 className="text-2xl font-medium tracking-tight text-stone-900 md:text-3xl">
             Case Studies
           </h1>
-          <p className="mt-2 text-sm italic text-stone-500">
-            Selected creative challenges and how I approached them
+          <p className="mt-2 text-sm text-stone-500">
+                        Selected creative challenges and how I approached them
           </p>
         </section>
 
