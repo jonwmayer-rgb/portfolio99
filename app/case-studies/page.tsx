@@ -80,7 +80,7 @@ const FEATURED_PROJECTS: CaseStudy[] = [
         url: 'https://www.youtube.com/embed/ymx6qVE1Fm0?autoplay=1',
         poster: 'https://img.youtube.com/vi/ymx6qVE1Fm0/maxresdefault.jpg',
         badge: '3M+ AIO Impressions',
-        label: 'How to Learn Spanish',
+        label: '"How to Learn Spanish Fast" SEO Play',
       },
       verticals: [
         {
@@ -92,8 +92,8 @@ const FEATURED_PROJECTS: CaseStudy[] = [
         {
           url: 'https://www.tiktok.com/player/v1/7525823985397927223?autoplay=1',
           poster: '/case-babbel-tt.jpg',
-          badge: '150K Views',
-          label: 'Organic TikTok Lead-Gen',
+          badge: 'UGC',
+          label: 'Learner Journey',
         },
       ],
     },
