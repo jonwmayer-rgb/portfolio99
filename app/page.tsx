@@ -1,14 +1,56 @@
 import Link from 'next/link';
 
+interface BrandItem {
+  name: string;
+  href: string;
+  logo?: string;
+  heightClass?: string;
+}
+
 export default function HomePage() {
-  const brands = [
-    { name: 'Babbel', href: 'https://www.instagram.com/babbel/' },
-    { name: 'Mental Floss', href: 'https://www.mentalfloss.com' },
-    { name: 'Upworthy', href: 'https://www.upworthy.com' },
-    { name: 'Priorities USA', href: 'https://priorities.org' },
-    { name: 'Hatched', href: 'https://www.youtube.com/@hatchednyc' },
-    { name: 'Hook Arts Media', href: 'https://hookarts.org' },
-    { name: 'SeriesFest', href: 'https://www.seriesfest.com' },
+  const brands: BrandItem[] = [
+    {
+      name: 'Babbel',
+      href: 'https://www.instagram.com/babbel/',
+      logo: '/babbel-logo.png',
+      heightClass: 'h-4',
+    },
+    {
+      name: 'Mental Floss',
+      href: 'https://www.mentalfloss.com',
+      logo: '/mentalfloss-logo.png',
+      heightClass: 'h-4',
+    },
+    {
+      name: 'Upworthy',
+      href: 'https://www.upworthy.com',
+      logo: '/Logo_Upworthy.webp',
+      heightClass: 'h-3.5',
+    },
+    {
+      name: 'Priorities USA',
+      href: 'https://priorities.org',
+      logo: '/priorities-logo.png',
+      heightClass: 'h-5',
+    },
+    {
+      name: 'Sideswipe',
+      href: 'https://www.youtube.com/@hatchednyc',
+      logo: '/sideswipe.logo.jpg',
+      heightClass: 'h-4',
+    },
+    {
+      name: 'Hook Arts Media',
+      href: 'https://hookarts.org',
+      logo: '/hookarts-logo.png',
+      heightClass: 'h-4',
+    },
+    {
+      name: 'SeriesFest',
+      href: 'https://www.seriesfest.com',
+      logo: '/seriesfest-logo.png',
+      heightClass: 'h-5',
+    },
   ];
 
   return (
@@ -101,33 +143,32 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* BRANDS & COLLABORATORS */}
         <section className="border-t border-stone-200/80 pt-6 pb-7">
-          <p className="text-xs uppercase tracking-wider text-stone-500 font-medium mb-3.5">
+          <p className="text-xs uppercase tracking-wider text-stone-500 font-medium mb-4">
             Selected Brands &amp; Collaborators
           </p>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2.5">
             {brands.map((brand) => (
               <a
                 key={brand.name}
                 href={brand.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1 rounded-full bg-stone-100 px-3 py-1 text-xs font-mono text-stone-700 transition-all hover:bg-stone-200 hover:text-stone-950"
+                className="group flex h-10 items-center justify-center rounded-lg border border-stone-200/80 bg-white px-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-all duration-200 hover:border-stone-300 hover:bg-stone-50/60 hover:shadow-sm"
+                title={brand.name}
               >
-                <span>{brand.name}</span>
-                <svg
-                  className="h-2.5 w-2.5 opacity-40 transition-opacity group-hover:opacity-100"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                {brand.logo ? (
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className={`${brand.heightClass || 'h-4'} max-w-[110px] object-contain grayscale opacity-60 transition-all duration-200 group-hover:grayscale-0 group-hover:opacity-100`}
                   />
-                </svg>
+                ) : (
+                  <span className="text-xs font-mono text-stone-600 transition-colors group-hover:text-stone-950">
+                    {brand.name}
+                  </span>
+                )}
               </a>
             ))}
           </div>
@@ -139,7 +180,7 @@ export default function HomePage() {
               Deep Dives
             </h2>
             <Link
-              className="text-xs font-mono text-rose-700 hover:text-rose-900 hover:underline underline-offset-4 flex items-center gap-1 font-medium"
+              className="text-xs font-mono text-rose-700 hover:text-rose-950 hover:underline underline-offset-4 flex items-center gap-1 font-medium"
               href="/case-studies"
             >
               <span>View All Studies</span> →
@@ -156,7 +197,7 @@ export default function HomePage() {
                     Featured Client · Babbel
                   </span>
                   <span className="text-stone-300">•</span>
-                  <span className="rounded-full bg-rose-50 px-2 py-0.5 text-[11px] font-mono font-medium text-rose-800 border border-rose-200">
+                  <span className="rounded-full bg-rose-50 px-2.5 py-0.5 text-[11px] font-mono font-medium text-rose-800 border border-rose-200">
                     1B+ Organic Views
                   </span>
                 </div>
