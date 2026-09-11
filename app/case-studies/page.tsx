@@ -85,13 +85,13 @@ const FEATURED_PROJECTS: CaseStudy[] = [
       verticals: [
         {
           url: 'https://www.instagram.com/reel/DVjFhcgjrWh/embed',
-          poster: '/case-babbel-ig.png',
+          poster: '/case-babbel-ig.jpg',
           badge: '36 Opt-ins',
           label: 'Direct-Response Reel',
         },
         {
           url: 'https://www.tiktok.com/player/v1/7525823985397927223?autoplay=1',
-          poster: '/case-babbel-tt.png',
+          poster: '/case-babbel-tt.jpg',
           badge: '150K Views',
           label: 'Organic TikTok Lead-Gen',
         },
