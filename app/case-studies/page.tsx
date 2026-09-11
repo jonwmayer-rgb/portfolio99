@@ -78,20 +78,20 @@ const FEATURED_PROJECTS: CaseStudy[] = [
     mediaGroup: {
       horizontal: {
         url: 'https://www.youtube.com/embed/ymx6qVE1Fm0?autoplay=1',
-        poster: '/case-babbel-yt.jpg',
+        poster: 'https://img.youtube.com/vi/ymx6qVE1Fm0/maxresdefault.jpg',
         badge: '3M+ AIO Impressions',
         label: 'How to Learn Spanish',
       },
       verticals: [
         {
           url: 'https://www.instagram.com/reel/DVjFhcgjrWh/embed',
-          poster: '/case-babbel-ig.jpg',
+          poster: '/case-babbel-ig.png',
           badge: '36 Opt-ins',
           label: 'Direct-Response Reel',
         },
         {
           url: 'https://www.tiktok.com/player/v1/7525823985397927223?autoplay=1',
-          poster: '/case-babbel-tt.jpg',
+          poster: '/case-babbel-tt.png',
           badge: '150K Views',
           label: 'Organic TikTok Lead-Gen',
         },
