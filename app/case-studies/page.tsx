@@ -117,7 +117,7 @@ const FEATURED_PROJECTS: CaseStudy[] = [
     videoEmbedUrl:
       'https://www.youtube.com/embed/KdtpBKKIvrk?list=PLYT7t0pcxEINn7R0XjGy3aj4cuLj8bn9U&autoplay=1',
     videoBadge: '200K+ Watch Hours',
-    videoLabel: 'Food History Series',
+    videoLabel: '"Food History" Series',
     videoPoster: 'https://img.youtube.com/vi/KdtpBKKIvrk/maxresdefault.jpg',
   },
   {
