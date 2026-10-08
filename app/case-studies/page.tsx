@@ -67,8 +67,8 @@ const FEATURED_PROJECTS: CaseStudy[] = [
       'Retrained video producers & social managers, developed/deployed custom analytics, player-coached to drive massive increase in cadence and engagement.',
     deliverables: (
       <>
-        Thousands of videos published per year, 30Xed audience, 200Xed annual
-        video views. Launched{' '}
+        Thousands of videos published per year, 30Xed audience, 50xed annual
+        video views to 500M+/year. Launched{' '}
         <a
           href="https://www.tiktok.com/@learnspanishbabbel"
           target="_blank"
