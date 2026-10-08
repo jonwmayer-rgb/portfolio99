@@ -172,7 +172,7 @@ export default function SelectedWorkPage() {
               Case Studies
             </Link>
             <a
-                            href="/resume.pdf?v=5"
+                            href="/resume.pdf?v=6"
 
               target="_blank"
               className="flex items-center gap-1.5 text-stone-600 hover:text-rose-700 transition-colors font-mono text-xs"
