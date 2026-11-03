@@ -155,7 +155,7 @@ export default function SelectedWorkPage() {
               Jonathan Mayer
             </Link>
             <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">
-              Video Producer/Strategist &middot; New York City
+            Video/Social Strategist &middot; New York City
             </p>
           </div>
           <nav className="flex items-center gap-6 text-sm font-medium">

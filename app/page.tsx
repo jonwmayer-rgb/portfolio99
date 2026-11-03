@@ -68,7 +68,7 @@ export default function HomePage() {
               </span>
             </div>
             <p className="text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">
-              Video Producer/Strategist · New York City
+              Video/Social Strategist · New York City
             </p>
           </div>
           <nav className="flex items-center gap-6 text-sm font-medium">
